@@ -546,8 +546,4 @@ footer blockquote {
         margin-right: 5%;
     }
 
-    footer {
-        display: inline-flex;
-        padding: 5rem 15rem;
-    }
 }
