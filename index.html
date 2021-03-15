@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh - Fullscript test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+
+<body class="fade-in">
+    <!--  Accessibility skip links -->
+    <a href='#quote'></a>
+    <a href='#team'></a>
+    <a href='#content-section'></a>
+    <a href='#last-quote'></a>
+    <!--  Accessibility skip links END-->
+    <!--  Header Section   -->
+    <header aria-labelledby="header">
+        <img src="./assets/logos/fullscript-logo.svg" alt="Fullscript Logo" class="logo">
+        <nav role="navigation">
+            <ul class="color-orion">
+                <li role="menuitem"><a href="">Lorem Ipsum <i class="fas fa-chevron-down"></i></a></li>
+                <li role="menuitem"><a href="">Lorem Ipsum <i class="fas fa-chevron-down"></i></a></li>
+            </ul>
+        </nav>
+        <a href="#"><button class="cta"> Call to action </button></a>
+
+    </header>
+    <!--  Header Section END  -->
+
+    <!--  Main Section        -->
+    <main aria-labelledby="main">
+        <!--  Quote section -->
+        <section id="quote" class="text-center border-inside" role="banner">
+            <h1 class="color-white font-bold" role="heading">Raxacoricofallapatorius</h1>
+            <div class="quote-text center">
+                <blockquote class="color-white text-center">&ldquo;<em>Look at these people,</em> these human beings. Consider their potential! From the day they arrive on the planet, blinking, step into the sun, there is more to see than can ever be seen, more to do than — no, hold on. Sorry, that's The Lion King…&rdquo;</blockquote>
+            </div>
+            <a href="#"> <button class="quote-btn" role="button"><span>Allons-y</span><i class="fas fa-chevron-right"></i></button></a>
+        </section>
+        <!--  Quote section end -->
+
+        <!--  Video section -->
+        <section id="video" class="text-center">
+
+
+            <h2 class="color-primary">Your Favourite Video
+                <hr class="underline">
+            </h2>
+            <div class="pattern">
+                <img src="./assets/patterns/dotted-pattern.png" alt="" role="img">
+            </div>
+            <video autoplay allow="autoplay" loop muted >
+                <source src="./assets/videos/video.mp4" type="video/mp4">
+            </video>
+        </section>
+        <!--  Video section end -->
+
+        <!--  Team section      -->
+        <section id="team">
+
+            <div class="card border-grey">
+                <div class="card-circlebox border-green">
+                    <div class="card-img">
+                        <img src="./assets/images/man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-736716.jpg" alt="Stephen Strange MD, Our Sorcerer Supreme" role="img">
+                    </div>
+                </div>
+                <div class="card-heading">
+                    <span class=" card-title font-bold color-green">Stephen Strange, MD</span>
+                    <span class="card-subtitle color-orion">Sorcerer Supreme</span>
+                </div>
+                <p class="color-orion">You’re talking about cellular regeneration. That’s bleeding edge medical tech. Is that why you’re working here without a governing medical board?</p>
+            </div>
+
+            <div class="card border-grey">
+                <div class="card-circlebox border-green">
+                    <div class="card-img">
+                        <img class="card-img" src="./assets/images/alegria-bonita-bonito-cara-774909.jpg" alt="Carol Danvers, Our Air Force Pilot" role="img">
+                    </div>
+                </div>
+                <div class="card-heading">
+                    <span class=" card-title font-bold color-green">Carol Danvers</span>
+                    <span class="card-subtitle color-orion">Air Force Pilot</span>
+                </div>
+
+                <p class="color-orion">You’re talking about cellular regeneration. That’s bleeding edge medical tech. Is that why you’re working here without a governing medical board?</p>
+            </div>
+
+            <div class="card border-grey">
+                <div class="card-circlebox border-citrus">
+                    <div class="card-img ">
+                        <img src="./assets/images/woman-wearing-white-sleeveless-shirt-and-white-denim-shorts-1082962.jpg" alt="Natalia Romanov, Our SHIELD Agent" role="img">
+                    </div>
+                </div>
+                <div class="card-heading">
+                    <span class=" card-title font-bold color-green">Natalia Romanov</span>
+                    <span class="card-subtitle color-orion">S.H.I.E.L.D Agent</span>
+                </div>
+                <p class="color-orion">You’re talking about cellular regeneration. That’s bleeding edge medical tech. Is that why you’re working here without a governing medical board?</p>
+            </div>
+        </section>
+        <!--  Team section end  -->
+
+        <!--  Content section   -->
+        <section id="content-section color-orion">
+            <h3 class="color-orion" role="heading">A beginner’s guide to playing Dungeons and Dragons</h3>
+            <p class="lorem"></p>
+            <!--    Making GET request to pull data from loripsum.net API        -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    // I  used loripsum.net but it was throwing CORS error.
+                    //loripsum.net was responding with a call back error once CORS issue was addressed (could be an API's issue itself)
+                    //wanted to display how I usually make ajax GET requests and tested it on other lorem ipsum API's and the code worked below
+                    var url = "https://hipsum.co/api/?type=hipster-centric&sentences=15"
+                    $.ajax({
+                        "type": "GET",
+                        'url': url,
+                        success: function(data) {
+                            $(".lorem").text(data[0]);
+                        },
+                        error: function(data) {
+                            console.log(data);
+                        },
+
+                    });
+                });
+            </script>
+
+
+
+        </section>
+        <!--  Content section end -->
+
+    </main>
+    <!--  Main Section End -->
+    <!--  Footer Section   -->
+
+    <footer class="bg-orion" aria-labelledby="footer">
+        <span class="footer-heading color-white font-bold" role="heading">
+            I wanna tell you a story
+        </span><span class="quote-bg color-grey">&ldquo;</span>
+        <blockquote id="last-quote" class="color-white" role="contentinfo"> about the time there were three ogres, right? And then one of ‘em hit me so hard I almost died. You were sitting up in some sort of weird laser just shooting flasks willy-nilly, Travis was ripping the arms off a robot, and I got punched so hard I almost died! I’m not gonna go toe-to-toe with a crab while you’re armed with a terrible Scottish accent, and Travis doesn’t even have his shield! I’m out!&rdquo; <br>&#8213;<i>Taako</i></blockquote>
+    </footer>
+    <!--  Footer Section end  -->
+
+</body></html>
