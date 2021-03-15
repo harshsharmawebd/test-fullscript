@@ -448,16 +448,16 @@ footer blockquote {
     }
 
     .card:nth-child(1) {
-        margin-right: .25rem;
+        margin-right: 2rem;
     }
 
     .card:nth-child(2) {
-        margin-right: .25rem;
-        margin-left: .25rem
+        margin-right: 2rem;
+        margin-left: 2rem
     }
 
     .card:nth-child(3) {
-        margin-left: .25rem;
+        margin-left: 2rem;
     }
 
     .card-circlebox {
@@ -490,6 +490,7 @@ footer blockquote {
     }
 
     footer blockquote {
+        font-size: 2rem;
         margin: 0;
         left: 1rem;
     }
@@ -516,11 +517,8 @@ footer blockquote {
     header,
     main {
         margin: 0 auto;
-        margin-left: 20rem;
-        margin-right: 20rem;
+        margin-left: 5%;
+        margin-right: 5%;
     }
-        footer {
-        display: inline-flex;
-        padding: 5rem 15rem;
-    }
+ 
 }
